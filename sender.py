@@ -5,7 +5,7 @@ import mysql.connector
 import datetime
 
 
-def parse_emails(receiver_email: dict):
+def email_list_2_string(receiver_email: list):
 	recepients = str(receiver_email)
 	recepients = recepients.replace('\'', '')
 	recepients = recepients.replace('[', '')
@@ -49,7 +49,7 @@ for x in myresult:
 
 	message = f'''\
 From: [WYWOZ SMIECI] <{sender_email}>
-To: {receiver_email}
+To: {email_list_2_string(receiver_email)}
 Subject: Jutro ({tommorow_date}) wywozone sa smieci {garbage_name}
 
 Jutro ({tommorow_date}) wywozone sa smieci {garbage_name}.
